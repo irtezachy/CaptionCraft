@@ -1,43 +1,63 @@
-# CaptionCraft - AI-Powered Image Captioning System
+# CaptionCraft
 
-CaptionCraft is a full-stack AI-powered image captioning system that allows users to upload images and receive automatically generated captions. The system uses BLIP-2 for image processing and caption generation, with a FastAPI backend and React.js frontend.
+CaptionCraft is an AI-powered image captioning application that automatically generates descriptive captions for images using the BLIP (Bootstrapping Language-Image Pre-training) model from Salesforce. The application features a modern, user-friendly interface with real-time image processing capabilities.
 
 ## Features
 
-- Image upload via drag-and-drop or click
-- Automatic caption generation using BLIP-2
-- Real-time processing and display
-- Modern, responsive UI
-- Error handling and loading states
+### Frontend (React.js)
+- Modern, responsive design using Material-UI
+- Drag-and-drop interface for image uploads
+- Real-time image preview
+- Smooth animations and transitions
+- Mobile-responsive design
+- Error handling and user feedback
 
-## Project Structure
+### Backend (FastAPI)
+- High-performance API endpoints
+- BLIP model integration for AI caption generation
+- Image processing capabilities
+- Health check endpoints
+- Error handling and recovery
 
-```
-CaptionCraft/
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── README.md
-└── frontend/
-    ├── public/
-    ├── src/
-    ├── package.json
-    └── README.md
-```
+### Key Features
+1. **Image Upload**
+   - Drag-and-drop interface
+   - Click to select files
+   - Supports multiple image formats (JPG, PNG, GIF)
+   - File size validation (max 10MB)
+   - Real-time image preview
+
+2. **Caption Generation**
+   - AI-powered image analysis
+   - Natural language caption generation
+   - Real-time processing
+   - Error handling and user feedback
+
+3. **User Interface**
+   - Clean, modern design with gradient accents
+   - Loading indicators during processing
+   - Error messages and notifications
+   - Responsive layout for all devices
+   - Smooth animations for better UX
 
 ## Setup Instructions
 
-### Backend Setup
+### Prerequisites
+- Python 3.8+
+- Node.js 14+
+- npm 6+
 
+### Backend Setup
 1. Navigate to the backend directory:
    ```bash
    cd backend
    ```
 
-2. Create a virtual environment and activate it:
+2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   .\venv\Scripts\activate  # Windows
+   source venv/bin/activate  # Linux/Mac
    ```
 
 3. Install dependencies:
@@ -45,13 +65,12 @@ CaptionCraft/
    pip install -r requirements.txt
    ```
 
-4. Run the FastAPI server:
+4. Start the backend server:
    ```bash
    uvicorn main:app --reload
    ```
 
 ### Frontend Setup
-
 1. Navigate to the frontend directory:
    ```bash
    cd frontend
@@ -68,26 +87,43 @@ CaptionCraft/
    ```
 
 ## Usage
+1. Open your web browser and navigate to `http://localhost:3000`
+2. Drag and drop an image or click to select one
+3. Wait for the image to upload and preview
+4. Click "Generate Caption"
+5. View the AI-generated caption in the animated card below
 
-1. Open your browser and navigate to `http://localhost:3000`
-2. Upload an image by dragging and dropping or clicking the upload area
-3. Click "Generate Caption" to process the image
-4. View the generated caption below the upload area
+## Technical Details
 
-## Technologies Used
+### API Endpoints
+- `GET /health`: Check API health status
+- `POST /generate-caption/`: Generate caption for uploaded image
 
+### Dependencies
 - Backend:
   - FastAPI
   - PyTorch
-  - BLIP-2
-  - PIL (Python Imaging Library)
+  - Transformers
+  - Pillow
+  - python-multipart
 
 - Frontend:
-  - React.js
+  - React
+  - Material-UI
   - Axios
-  - React Dropzone
-  - CSS3
+  - react-dropzone
+
+## Future Enhancements
+1. Support for multiple languages
+2. Batch image processing
+3. Caption editing capabilities
+4. Social media sharing
+5. User accounts and history
+6. Custom caption styles
+7. Advanced image analysis options
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-
-MIT License 
+This project is licensed under the MIT License - see the LICENSE file for details. 
